@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import "./App.css";
-import Editor from "@monaco-editor/react";
+// import Editor from "@monaco-editor/react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Share from "./Share";
 
@@ -64,9 +64,9 @@ function App() {
   }, []);
 
   // Function to handle editor mount and get editor instance
-  const handleEditorDidMount = (editor) => {
-    editorRef.current = editor;
-  };
+  // const handleEditorDidMount = (editor) => {
+  //   editorRef.current = editor;
+  // };
 
   return (
     <div className="App">
