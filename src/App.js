@@ -20,8 +20,36 @@ function App() {
     // }
   };
 
+  function redirectToMobileApp() {
+    const originalUrl = window.location.href;
+    const removedPart = "/share";
+
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (/android/i.test(userAgent)) {
+      if (/SamsungBrowser/i.test(userAgent)) {
+        window.location.href = originalUrl.replace(removedPart, "");
+      } else if (/Opera/i.test(userAgent)) {
+        window.location.href = originalUrl.replace(removedPart, "");
+      } else {
+        window.location.href = originalUrl.replace(removedPart, "");
+      }
+    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      if (originalUrl.includes("www")) {
+        window.location.href = originalUrl
+          .replace(removedPart, "")
+          .replace("https://www.", "");
+      } else {
+        window.location.href = originalUrl
+          .replace(removedPart, "")
+          .replace("https://", "");
+      }
+    }
+  }
+
   // Capture Ctrl + S key event
   useEffect(() => {
+    redirectToMobileApp();
     const handleKeyDown = (event) => {
       if (event.ctrlKey && event.key === "s") {
         event.preventDefault(); // Prevent the default save action
