@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Share from "./Share";
 
 function App() {
-  const editorRef = useRef(null);
+  // const editorRef = useRef(null);
 
   // Function to execute the code from the editor
   const executeCode = () => {
