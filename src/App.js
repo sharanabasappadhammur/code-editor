@@ -7,17 +7,17 @@ function App() {
 
   // Function to execute the code from the editor
   const executeCode = () => {
-    if (editorRef.current) {
-      const code = editorRef.current.getValue();
-
-      try {
-        console.clear();
-        // Use the Function constructor to safely execute the code
-        const result = new Function(code)();
-      } catch (error) {
-        console.error("Error executing code:", error);
-      }
-    }
+    // if (editorRef.current) {
+    //   const code = editorRef.current.getValue();
+    //   try {
+    //     console.clear();
+    //     // Use the Function constructor to safely execute the code
+    //     const result = new Function(code)();
+    //     console.log(result);
+    //   } catch (error) {
+    //     console.error("Error executing code:", error);
+    //   }
+    // }
   };
 
   // Capture Ctrl + S key event
