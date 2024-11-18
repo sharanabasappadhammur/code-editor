@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import "./App.css";
 import Editor from "@monaco-editor/react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Share from "./Share";
 
 function App() {
   const editorRef = useRef(null);
@@ -70,13 +72,22 @@ function App() {
     <div className="App">
       {/* <div style={{backgroundColor:"#1f1f1f", color:"#ffca28", padding:"3px 30px",fontSize:"15px" }}>React Code Editor</div> */}
       {/* <div style={{ padding: "10px 0px", backgroundColor: "#1e1e1e" }}> */}
-      <Editor
+      {/* <Editor
         height="100vh"
         defaultLanguage="javascript"
         defaultValue="// Start coding here"
         // theme="Eiffel"
         onMount={handleEditorDidMount}
-      />
+      /> */}
+
+      <Router>
+        {/* The Switch component renders the first route that matches */}
+        <Switch>
+          {/* <Route path="/share" component={Share} /> */}
+          <Route exact path="/share/News/:id" component={Share} />
+        </Switch>
+      </Router>
+
       {/* </div> */}
     </div>
   );
